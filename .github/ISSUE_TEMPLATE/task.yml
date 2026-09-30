@@ -1,0 +1,27 @@
+name: 任务或改进
+description: 记录可交付的开发、研究或文档工作
+title: "[Task] "
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标与背景
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: 交付物
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      placeholder: "- [ ] 可检查的结果 1\n- [ ] 可检查的结果 2"
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖、风险和预计完成时间
