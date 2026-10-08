@@ -27,7 +27,6 @@ PhyQGen/
 ├─ README.md
 ├─ docs/
 │  ├─ requirements/problem_definition.md   # 5W1H 与产品描述
-│  └─ mgmt/kanban.md                         # 周进度与任务看板
 └─ code/
    ├─ backend/                              # 预留，尚未实现
    └─ frontend/                             # 预留，尚未实现
