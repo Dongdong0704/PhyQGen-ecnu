@@ -7,7 +7,6 @@
 | 快速入口 | 内容 |
 | --- | --- |
 | [5W1H 报告与产品描述](docs/requirements/problem_definition.md) | 问题边界、目标用户、拟议方案和验证指标 |
-| [项目 Kanban 看板](docs/mgmt/kanban.md) | 第 1 周成果、后续任务与每周计划 |
 
 ## 项目要解决什么
 
