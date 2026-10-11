@@ -15,7 +15,7 @@
 
 系统用例及角色关系如图 1 所示。教师完成出题与题库操作，管理员负责必要维护，外部模型服务支持系统内部生成处理；知识库增强与配图按出题选项启用。
 
-![图 1 PhyQGen 系统用例图](E:/AAA2026学习工作/智能教育软件工程实践/PhyQGen/docs/requirements/images/phyqgen_use_case.png)
+![图 1 PhyQGen 系统用例图](images/phyqgen_use_case.png)
 
 *图 1 PhyQGen 系统用例图*
 
@@ -133,13 +133,13 @@
 6. 教师直接审核习题并按需修改，核验当前内容后执行确认定稿；不再触发智能体生成或自动校验（FR-7.1～7.5）。
 7. 系统检查基本保存条件，保存定稿及确认记录，成功后标记“教师已确认”；教师可从个人题库检索并导出已确认题目（FR-7.4、FR-8.1～8.3）。
 
-![图 2(a) PhyQGen 出题活动图：主流程](E:/AAA2026学习工作/智能教育软件工程实践/PhyQGen/docs/requirements/images/phyqgen_question_activity_main.png)
+![图 2(a) PhyQGen 出题活动图：主流程](images/phyqgen_question_activity_main.png)
 
 *图 2(a) PhyQGen 出题活动图：主流程*
 
 图 2(b)展开图 2(a)中 M08 调用的逐题生成子流程，涵盖知识检索、文本与配图生成、自动校验及有限修订。该子流程返回可用草稿或单题失败结果，由主流程收集；其结束不代表整个批量任务结束，也不代表教师已确认。
 
-![图 2(b) PhyQGen 出题活动图：逐题生成展开](E:/AAA2026学习工作/智能教育软件工程实践/PhyQGen/docs/requirements/images/phyqgen_question_activity_generation.png)
+![图 2(b) PhyQGen 出题活动图：逐题生成展开](images/phyqgen_question_activity_generation.png)
 
 *图 2(b) PhyQGen 出题活动图：逐题生成展开*
 
@@ -157,7 +157,7 @@
 
 主要业务实体及关联如图 3 所示。生成任务允许零题产出；题目通过版本关联配图与实际引用的检索证据，内部反馈仅对应实际检查的系统生成版本，教师确认记录仅对其确认的具体版本生效。
 
-![图 3 PhyQGen 领域模型类图](E:/AAA2026学习工作/智能教育软件工程实践/PhyQGen/docs/requirements/images/phyqgen_domain_model.png)
+![图 3 PhyQGen 领域模型类图](images/phyqgen_domain_model.png)
 
 *图 3 PhyQGen 领域模型类图*
 
