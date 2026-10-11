@@ -2,12 +2,13 @@
 
 > 面向高中物理教师的习题生成、智能体自动校验与人工审核辅助工具
 
-**当前状态：** 已建立仓库并完成问题定义与功能规格草案；系统尚未开发完成，暂无可运行版本或正式发布日期。
+**当前状态：** 已整理问题定义、功能规格草案、课标原始资料及研究解读；系统尚未开发完成，暂无可运行版本或正式发布日期。
 
 | 快速入口 | 内容 |
 | --- | --- |
 | [5W1H 报告与产品描述](docs/requirements/problem_definition.md) | 问题边界、目标用户、拟议方案和验证指标 |
 | [功能规格说明书](docs/requirements/functional_spec.md) | 系统角色、功能需求、业务流程与验收标准 |
+| [课标资料与研究解读](#课标资料与研究解读) | 全国课程标准、地方教学文件及对应分析报告 |
 
 ## 项目要解决什么
 
@@ -21,6 +22,19 @@ PhyQGen 计划让教师输入知识点、题型、难度等要求，获得可检
 
 项目需要完成上述环节，并支持单题及批量生成；逐题展示生成进度、习题草稿或生成异常及教师确认状态，校验意见用于系统内部修订。教师可按任务要求选择是否配图、是否启用知识库及生成数量。具体需求与验收标准见[功能规格说明书](docs/requirements/functional_spec.md)。
 
+## 课标资料与研究解读
+
+已收录全国课程标准及上海、江苏、浙江的教学文件与解读，分析知识范围、考查深度、思维要求和知识形成过程，为后续出题约束、知识库建设与习题质量评价提供参考。
+
+| 范围 | 原始资料 | 研究解读 |
+| --- | --- | --- |
+| 全国 | [普通高中物理课程标准（2025 年修订）](docs/requirements/Curriculum%20Standard/Official%20Documents/全国.pdf) | [全国课程标准分析报告](docs/requirements/Curriculum%20Standard/Interpretations/全国.md) |
+| 上海 | [高中物理教学基本要求（试验本）](docs/requirements/Curriculum%20Standard/Official%20Documents/上海.pdf) | [上海教学基本要求分析报告](docs/requirements/Curriculum%20Standard/Interpretations/上海.md) |
+| 江苏 | [普通高中物理课程标准教学要求（修订版）](docs/requirements/Curriculum%20Standard/Official%20Documents/江苏.pdf) | [江苏教学要求分析报告](docs/requirements/Curriculum%20Standard/Interpretations/江苏.md) |
+| 浙江 | [普通高中新课程实验物理学科教学指导意见](docs/requirements/Curriculum%20Standard/Official%20Documents/浙江.pdf) | [浙江教学要求分析报告](docs/requirements/Curriculum%20Standard/Interpretations/浙江.md) |
+
+各报告按原始文件的课程体系与版本解读；思维要求和知识来源分类属于研究归纳。浙江报告基于所收录的七章文本，主要涉及力学与航天。
+
 ## 仓库导航
 
 ```text
@@ -29,7 +43,11 @@ PhyQGen/
 ├─ docs/
 │  └─ requirements/
 │     ├─ problem_definition.md             # 5W1H 与产品描述
-│     └─ functional_spec.md                # 功能规格说明书
+│     ├─ functional_spec.md                # 功能规格说明书
+│     ├─ images/                           # 用例图、活动图与领域模型图
+│     └─ Curriculum Standard/              # 课标资料与研究解读
+│        ├─ Official Documents/            # 全国、上海、江苏、浙江原始 PDF
+│        └─ Interpretations/               # 四份对应的 Markdown 分析报告
 └─ code/
    ├─ backend/                              # 预留，尚未实现
    └─ frontend/                             # 预留，尚未实现
