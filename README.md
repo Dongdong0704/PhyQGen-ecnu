@@ -33,7 +33,7 @@ PhyQGen 计划让教师输入知识点、题型、难度等要求，获得可检
 | 江苏 | [普通高中物理课程标准教学要求（修订版）](docs/requirements/Curriculum%20Standard/Official%20Documents/江苏.pdf) | [江苏教学要求分析报告](docs/requirements/Curriculum%20Standard/Interpretations/江苏.md) |
 | 浙江 | [普通高中新课程实验物理学科教学指导意见](docs/requirements/Curriculum%20Standard/Official%20Documents/浙江.pdf) | [浙江教学要求分析报告](docs/requirements/Curriculum%20Standard/Interpretations/浙江.md) |
 
-各报告按原始文件的课程体系与版本解读；思维要求和知识来源分类属于研究归纳。浙江报告基于所收录的七章文本，主要涉及力学与航天。
+各报告按原始文件的课程体系与版本解读；思维要求和知识来源分类属于研究归纳。
 
 ## 仓库导航
 
