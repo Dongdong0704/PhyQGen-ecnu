@@ -7,7 +7,7 @@
 | 快速入口 | 内容 |
 | --- | --- |
 | [5W1H 报告与产品描述](docs/requirements/problem_definition.md) | 问题边界、目标用户、拟议方案和验证指标 |
-| [功能规格说明书](docs/requirements/functional_spec.md) | 系统角色、功能需求、业务流程与验收标准 |
+| [功能规格说明书](docs/requirements/functional%2Bnonfunctional_spec.md) | 系统角色、功能需求、业务流程与验收标准 |
 | [课标资料与研究解读](#课标资料与研究解读) | 全国课程标准、地方教学文件及对应分析报告 |
 
 ## 项目要解决什么
@@ -20,7 +20,7 @@ PhyQGen 计划让教师输入知识点、题型、难度等要求，获得可检
 
 `教师设定要求 → 知识库检索 → 文本与配图生成 → 智能体自动校验与修订 → 教师人工审核、修改与确认 → 保存和导出`
 
-项目需要完成上述环节，并支持单题及批量生成；逐题展示生成进度、习题草稿或生成异常及教师确认状态，校验意见用于系统内部修订。教师可按任务要求选择是否配图、是否启用知识库及生成数量。具体需求与验收标准见[功能规格说明书](docs/requirements/functional_spec.md)。
+项目需要完成上述环节，并支持单题及批量生成；逐题展示生成进度、习题草稿或生成异常及教师确认状态，校验意见用于系统内部修订。教师可按任务要求选择是否配图、是否启用知识库及生成数量。具体需求与验收标准见[功能规格说明书](docs/requirements/functional%2Bnonfunctional_spec.md)。
 
 ## 课标资料与研究解读
 
@@ -40,16 +40,34 @@ PhyQGen 计划让教师输入知识点、题型、难度等要求，获得可检
 ```text
 PhyQGen/
 ├─ README.md
+├─ .github/                                # GitHub 协作配置
+│  ├─ ISSUE_TEMPLATE/                       # 任务与缺陷模板
+│  ├─ pull_request_template.md             # PR 模板
+│  └─ workflows/                           # 自动化流程预留
 ├─ docs/
-│  └─ requirements/
-│     ├─ problem_definition.md             # 5W1H 与产品描述
-│     ├─ functional_spec.md                # 功能规格说明书
-│     ├─ images/                           # 用例图、活动图与领域模型图
-│     └─ Curriculum Standard/              # 课标资料与研究解读
-│        ├─ Official Documents/            # 全国、上海、江苏、浙江原始 PDF
-│        └─ Interpretations/               # 四份对应的 Markdown 分析报告
-└─ code/
-   ├─ backend/                              # 预留，尚未实现
-   └─ frontend/                             # 预留，尚未实现
+│  ├─ requirements/                        # 需求文档与课标研究
+│  │  ├─ problem_definition.md             # 5W1H 与产品描述
+│  │  ├─ functional+nonfunctional_spec.md   # 功能与非功能规格说明书
+│  │  ├─ images/                           # 用例图、活动图与领域模型图
+│  │  └─ Curriculum Standard/              # 课标资料与研究解读
+│  │     ├─ Official Documents/            # 全国、上海、江苏、浙江原始 PDF
+│  │     └─ Interpretations/               # 四份对应的 Markdown 分析报告
+│  ├─ algorithm/                           # 算法研究
+│  │  └─ research.md                       # 技术调研，待编写
+│  ├─ software/                            # 软件设计
+│  │  ├─ prototype/                        # 原型设计预留
+│  │  └─ architecture.md                   # 系统架构，待编写
+│  ├─ mgmt/                                # 项目管理
+│  │  ├─ communication_mgmt_plan.md         # 沟通管理计划，待编写
+│  │  └─ risk_mgmt_plan.md                  # 风险管理计划，待编写
+│  └─ retrospection/                       # 复盘总结预留
+├─ code/
+│  ├─ backend/                             # 后端服务预留，尚未实现
+│  ├─ frontend/                            # 前端应用预留，尚未实现
+│  └─ core_engine/                         # 核心引擎预留，尚未实现
+└─ tests/
+   ├─ unit/                                # 单元测试预留
+   └─ integration/                         # 集成测试预留
 ```
 
+预留空目录通过 `.gitkeep` 保留在 Git 中；标注“待编写”的 Markdown 文件目前为空。
