@@ -11,6 +11,7 @@
 | [用户故事与验收标准](docs/requirements/user_stories.md) | 教师与管理员的使用目标、正常流程及异常场景 |
 | [课标资料与研究解读](#课标资料与研究解读) | 全国课程标准、地方教学文件及对应分析报告 |
 | [高中物理高阶思维能力调研](docs/requirements/Curriculum%20Standard/Higher-Order%20Thinking%20Skills%20in%20High%20School%20Physics.md) | 六项能力标签、成立判据、命题示例与审核边界 |
+| [SWE-agent 文献调研报告](docs/algorithm/research.md) | 核心方法、实验结果、研究局限及对 PhyQGen 的设计启发 |
 
 ## 项目要解决什么
 
@@ -75,7 +76,7 @@ PhyQGen/
 │  │     ├─ Official Documents/            # 全国、上海、江苏、浙江原始 PDF
 │  │     └─ Interpretations/               # 四份对应的 Markdown 分析报告
 │  ├─ algorithm/                           # 算法研究
-│  │  └─ research.md                       # 技术调研，待编写
+│  │  └─ research.md                       # SWE-agent 文献调研与项目启发
 │  ├─ software/                            # 软件设计
 │  │  ├─ prototype/                        # 原型设计预留
 │  │  └─ architecture.md                   # 系统架构，待编写
