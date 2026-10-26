@@ -1,0 +1,48 @@
+async (page) => {
+  const results = []
+  const check = (condition, label) => { if (!condition) throw new Error(`FAIL: ${label}`); results.push(label); console.log(`PASS: ${label}`) }
+  const state = () => page.evaluate(() => JSON.parse(localStorage.getItem('phyqgen.prototype.v1') || '{}'))
+  const apiRequests = []
+  page.on('request', request => { if (new URL(request.url()).pathname.startsWith('/api/')) apiRequests.push(request.url()) })
+  await page.getByRole('menuitem', { name: '系统维护', exact: true }).click()
+  await page.getByRole('heading', { name: '系统维护', exact: true }).waitFor()
+  await page.getByPlaceholder('请输入文本生成与校验模型名称', { exact: true }).fill('审计文本模型')
+  await page.getByPlaceholder('请输入配图与图文校验模型名称', { exact: true }).fill('审计图像模型')
+  await page.getByPlaceholder('请输入知识检索嵌入模型名称', { exact: true }).fill('审计嵌入模型')
+  await page.getByPlaceholder('http://localhost:8000', { exact: true }).fill('http://localhost:8000/demo')
+  await page.locator('.el-form-item').filter({ hasText: '逐题并发上限' }).getByRole('spinbutton').fill('3')
+  await page.locator('.el-form-item').filter({ hasText: '单题最大轮次' }).getByRole('spinbutton').fill('2')
+  await page.locator('.switch-row .el-switch__core').click()
+  await page.getByRole('button', { name: '保存配置', exact: true }).click()
+  await page.getByText('配置已保存到当前浏览器', { exact: true }).waitFor()
+  let saved = await state()
+  check(saved.settings.text_model === '审计文本模型' && saved.settings.concurrency === 3 && saved.settings.max_rounds === 2 && saved.settings.kb_enabled === false, '模型、并发、轮次与知识库停用配置保存成功')
+  await page.reload()
+  await page.getByRole('heading', { name: '系统维护', exact: true }).waitFor()
+  check(await page.getByPlaceholder('请输入文本生成与校验模型名称', { exact: true }).inputValue() === '审计文本模型', '刷新后模型配置仍保留')
+  check(await page.locator('.switch-row').getByRole('switch').isChecked() === false, '刷新后知识库停用状态仍保留')
+  await page.locator('.switch-row .el-switch__core').click()
+  await page.getByRole('button', { name: '保存配置', exact: true }).click()
+  await page.getByText('配置已保存到当前浏览器', { exact: true }).waitFor()
+  check((await state()).settings.kb_enabled === true, '重新启用知识库并保存')
+
+  const beforeInvalid = (await state()).audits.length
+  await page.getByPlaceholder('http://localhost:8000', { exact: true }).fill('not-a-url')
+  await page.getByRole('button', { name: '模拟连接测试', exact: true }).click()
+  await page.getByText('请输入有效的 http/https 地址，地址中不要包含账号或密码', { exact: true }).waitFor()
+  check((await state()).audits.length === beforeInvalid, '无效连接地址被表单阻止且不写成功日志')
+  await page.getByPlaceholder('http://localhost:8000', { exact: true }).fill('http://localhost:8000/demo')
+  await page.getByRole('button', { name: '模拟连接测试', exact: true }).click()
+  await page.getByText('模拟测试完成：配置格式有效，演示适配器可用。真实模型连接尚未验证。', { exact: true }).waitFor()
+  check((await state()).audits.some(a => a.action.includes('模拟连接测试')), '模拟连接测试明确未验证真实服务且记录日志')
+  const previousVersion = (await state()).settings.kb_version
+  await page.getByRole('button', { name: '演示重建索引', exact: true }).click()
+  await page.getByText('演示索引已更新，当前有3条预置片段', { exact: true }).waitFor()
+  saved = await state()
+  check(saved.settings.kb_version !== previousVersion && saved.settings.kb_fragments === 3 && saved.audits.some(a => a.action.includes('演示重建知识库索引')), '演示重建更新索引版本和3片段计数并记录日志')
+  check(saved.audits.every(a => a.actor && a.time), '维护日志包含操作者与时间')
+  check(apiRequests.length === 0, '连接测试与索引重建没有发送后端API请求')
+  await page.setViewportSize({ width: 1440, height: 1200 })
+  await page.screenshot({ path: 'output/playwright/admin-settings.png', fullPage: true })
+  console.log(JSON.stringify({ phase: 'settings-complete', results }, null, 2))
+}
