@@ -1,0 +1,760 @@
+[
+  {
+    "title": "水平面上物块的加速运动",
+    "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请选择正确选项。",
+    "question_type": "single_choice",
+    "grade": "高一",
+    "bloom_level": "remember",
+    "difficulty": "基础",
+    "knowledge_point": "牛顿第二定律",
+    "options": "{\"A\":\"$3\\\\,\\\\mathrm{m/s^2}$；$6\\\\,\\\\mathrm{m/s}$\",\"B\":\"$6\\\\,\\\\mathrm{m/s^2}$；$12\\\\,\\\\mathrm{m/s}$\",\"C\":\"$2\\\\,\\\\mathrm{m/s^2}$；$4\\\\,\\\\mathrm{m/s}$\",\"D\":\"$1.5\\\\,\\\\mathrm{m/s^2}$；$3\\\\,\\\\mathrm{m/s}$\"}",
+    "answer": "A",
+    "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/newton.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-16T18:44:59.884Z",
+    "updated_at": "2026-11-16T18:44:59.884Z",
+    "rating": 5,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "水平面上物块的加速运动",
+        "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请选择正确选项。",
+        "options": "{\"A\":\"$3\\\\,\\\\mathrm{m/s^2}$；$6\\\\,\\\\mathrm{m/s}$\",\"B\":\"$6\\\\,\\\\mathrm{m/s^2}$；$12\\\\,\\\\mathrm{m/s}$\",\"C\":\"$2\\\\,\\\\mathrm{m/s^2}$；$4\\\\,\\\\mathrm{m/s}$\",\"D\":\"$1.5\\\\,\\\\mathrm{m/s^2}$；$3\\\\,\\\\mathrm{m/s}$\"}",
+        "answer": "A",
+        "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/newton.svg",
+        "created_at": "2026-11-16T18:44:59.884Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准（2017年版2020年修订）·运动和力",
+        "fragment_id": "DEMO-1-001",
+        "index_version": "demo-index-v1",
+        "content": "运用牛顿运动定律解释生产生活中的有关现象，解决有关问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-16T18:44:59.884Z"
+      }
+    ],
+    "id": 1,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C1",
+      "C2"
+    ]
+  },
+  {
+    "title": "串联电路中的电流与电压",
+    "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请选择全部正确选项。",
+    "question_type": "multiple_choice",
+    "grade": "高二",
+    "bloom_level": "understand",
+    "difficulty": "中等",
+    "knowledge_point": "欧姆定律",
+    "options": "{\"A\":\"$1\\\\,\\\\mathrm{A}$；$8\\\\,\\\\mathrm{V}$\",\"B\":\"$2\\\\,\\\\mathrm{A}$；$16\\\\,\\\\mathrm{V}$\",\"C\":\"$1.5\\\\,\\\\mathrm{A}$；$12\\\\,\\\\mathrm{V}$\",\"D\":\"解析所依据的物理规律是欧姆定律。\"}",
+    "answer": "A、D",
+    "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+    "illustration_url": "/illustrations/circuit.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-16T10:44:59.884Z",
+    "updated_at": "2026-11-16T10:44:59.884Z",
+    "rating": 4,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "串联电路中的电流与电压",
+        "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请选择全部正确选项。",
+        "options": "{\"A\":\"$1\\\\,\\\\mathrm{A}$；$8\\\\,\\\\mathrm{V}$\",\"B\":\"$2\\\\,\\\\mathrm{A}$；$16\\\\,\\\\mathrm{V}$\",\"C\":\"$1.5\\\\,\\\\mathrm{A}$；$12\\\\,\\\\mathrm{V}$\",\"D\":\"解析所依据的物理规律是欧姆定律。\"}",
+        "answer": "A、D",
+        "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+        "illustration_url": "/illustrations/circuit.svg",
+        "created_at": "2026-11-16T10:44:59.884Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·电路及其应用",
+        "fragment_id": "DEMO-2-001",
+        "index_version": "demo-index-v1",
+        "content": "理解欧姆定律，能分析简单串联与并联电路。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-16T10:44:59.884Z"
+      }
+    ],
+    "id": 2,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C6"
+    ]
+  },
+  {
+    "title": "自由下落过程中的能量转化",
+    "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。\n请将计算结果填入：________。",
+    "question_type": "fill_blank",
+    "grade": "高一",
+    "bloom_level": "apply",
+    "difficulty": "困难",
+    "knowledge_point": "机械能守恒",
+    "answer": "$v=10\\,\\mathrm{m/s}$。",
+    "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/fall.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-16T02:44:59.885Z",
+    "updated_at": "2026-11-16T02:44:59.885Z",
+    "rating": 0,
+    "comment": "",
+    "teacher_status": "pending",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "自由下落过程中的能量转化",
+        "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。\n请将计算结果填入：________。",
+        "answer": "$v=10\\,\\mathrm{m/s}$。",
+        "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/fall.svg",
+        "created_at": "2026-11-16T02:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·机械能及其守恒定律",
+        "fragment_id": "DEMO-3-001",
+        "index_version": "demo-index-v1",
+        "content": "理解机械能守恒定律及其适用条件，能解决简单的能量转化问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [],
+    "id": 3,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C3"
+    ]
+  },
+  {
+    "title": "水平面上物块的加速运动",
+    "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。",
+    "question_type": "short_answer",
+    "grade": "高一",
+    "bloom_level": "analyze",
+    "difficulty": "基础",
+    "knowledge_point": "牛顿第二定律",
+    "answer": "$a=3\\,\\mathrm{m/s^2}$，$v=6\\,\\mathrm{m/s}$。",
+    "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/newton.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-15T18:44:59.885Z",
+    "updated_at": "2026-11-15T18:44:59.885Z",
+    "rating": 5,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "水平面上物块的加速运动",
+        "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。",
+        "answer": "$a=3\\,\\mathrm{m/s^2}$，$v=6\\,\\mathrm{m/s}$。",
+        "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/newton.svg",
+        "created_at": "2026-11-15T18:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准（2017年版2020年修订）·运动和力",
+        "fragment_id": "DEMO-1-001",
+        "index_version": "demo-index-v1",
+        "content": "运用牛顿运动定律解释生产生活中的有关现象，解决有关问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-15T18:44:59.885Z"
+      }
+    ],
+    "id": 4,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C1",
+      "C2"
+    ]
+  },
+  {
+    "title": "串联电路中的电流与电压",
+    "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请选择正确选项。",
+    "question_type": "single_choice",
+    "grade": "高二",
+    "bloom_level": "remember",
+    "difficulty": "中等",
+    "knowledge_point": "欧姆定律",
+    "options": "{\"A\":\"$1\\\\,\\\\mathrm{A}$；$8\\\\,\\\\mathrm{V}$\",\"B\":\"$2\\\\,\\\\mathrm{A}$；$16\\\\,\\\\mathrm{V}$\",\"C\":\"$1.5\\\\,\\\\mathrm{A}$；$12\\\\,\\\\mathrm{V}$\",\"D\":\"$3\\\\,\\\\mathrm{A}$；$24\\\\,\\\\mathrm{V}$\"}",
+    "answer": "A",
+    "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+    "illustration_url": "/illustrations/circuit.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-15T10:44:59.885Z",
+    "updated_at": "2026-11-15T10:44:59.885Z",
+    "rating": 4,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "串联电路中的电流与电压",
+        "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请选择正确选项。",
+        "options": "{\"A\":\"$1\\\\,\\\\mathrm{A}$；$8\\\\,\\\\mathrm{V}$\",\"B\":\"$2\\\\,\\\\mathrm{A}$；$16\\\\,\\\\mathrm{V}$\",\"C\":\"$1.5\\\\,\\\\mathrm{A}$；$12\\\\,\\\\mathrm{V}$\",\"D\":\"$3\\\\,\\\\mathrm{A}$；$24\\\\,\\\\mathrm{V}$\"}",
+        "answer": "A",
+        "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+        "illustration_url": "/illustrations/circuit.svg",
+        "created_at": "2026-11-15T10:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·电路及其应用",
+        "fragment_id": "DEMO-2-001",
+        "index_version": "demo-index-v1",
+        "content": "理解欧姆定律，能分析简单串联与并联电路。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-15T10:44:59.885Z"
+      }
+    ],
+    "id": 5,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C6"
+    ]
+  },
+  {
+    "title": "自由下落过程中的能量转化",
+    "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。\n请选择全部正确选项。",
+    "question_type": "multiple_choice",
+    "grade": "高一",
+    "bloom_level": "understand",
+    "difficulty": "困难",
+    "knowledge_point": "机械能守恒",
+    "options": "{\"A\":\"$10\\\\,\\\\mathrm{m/s}$\",\"B\":\"$5\\\\,\\\\mathrm{m/s}$\",\"C\":\"$50\\\\,\\\\mathrm{m/s}$\",\"D\":\"解析所依据的物理规律是机械能守恒定律。\"}",
+    "answer": "A、D",
+    "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/fall.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-15T02:44:59.885Z",
+    "updated_at": "2026-11-15T02:44:59.885Z",
+    "rating": 0,
+    "comment": "",
+    "teacher_status": "pending",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "自由下落过程中的能量转化",
+        "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。\n请选择全部正确选项。",
+        "options": "{\"A\":\"$10\\\\,\\\\mathrm{m/s}$\",\"B\":\"$5\\\\,\\\\mathrm{m/s}$\",\"C\":\"$50\\\\,\\\\mathrm{m/s}$\",\"D\":\"解析所依据的物理规律是机械能守恒定律。\"}",
+        "answer": "A、D",
+        "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/fall.svg",
+        "created_at": "2026-11-15T02:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·机械能及其守恒定律",
+        "fragment_id": "DEMO-3-001",
+        "index_version": "demo-index-v1",
+        "content": "理解机械能守恒定律及其适用条件，能解决简单的能量转化问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [],
+    "id": 6,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C3"
+    ]
+  },
+  {
+    "title": "水平面上物块的加速运动",
+    "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请将计算结果填入：________。",
+    "question_type": "fill_blank",
+    "grade": "高一",
+    "bloom_level": "apply",
+    "difficulty": "基础",
+    "knowledge_point": "牛顿第二定律",
+    "answer": "$a=3\\,\\mathrm{m/s^2}$，$v=6\\,\\mathrm{m/s}$。",
+    "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/newton.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-14T18:44:59.885Z",
+    "updated_at": "2026-11-14T18:44:59.885Z",
+    "rating": 5,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "水平面上物块的加速运动",
+        "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请将计算结果填入：________。",
+        "answer": "$a=3\\,\\mathrm{m/s^2}$，$v=6\\,\\mathrm{m/s}$。",
+        "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/newton.svg",
+        "created_at": "2026-11-14T18:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准（2017年版2020年修订）·运动和力",
+        "fragment_id": "DEMO-1-001",
+        "index_version": "demo-index-v1",
+        "content": "运用牛顿运动定律解释生产生活中的有关现象，解决有关问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-14T18:44:59.885Z"
+      }
+    ],
+    "id": 7,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C1",
+      "C2"
+    ]
+  },
+  {
+    "title": "串联电路中的电流与电压",
+    "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。",
+    "question_type": "short_answer",
+    "grade": "高二",
+    "bloom_level": "analyze",
+    "difficulty": "中等",
+    "knowledge_point": "欧姆定律",
+    "answer": "$I=1\\,\\mathrm{A}$，$U_2=8\\,\\mathrm{V}$。",
+    "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+    "illustration_url": "/illustrations/circuit.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-14T10:44:59.885Z",
+    "updated_at": "2026-11-14T10:44:59.885Z",
+    "rating": 4,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "串联电路中的电流与电压",
+        "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。",
+        "answer": "$I=1\\,\\mathrm{A}$，$U_2=8\\,\\mathrm{V}$。",
+        "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+        "illustration_url": "/illustrations/circuit.svg",
+        "created_at": "2026-11-14T10:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·电路及其应用",
+        "fragment_id": "DEMO-2-001",
+        "index_version": "demo-index-v1",
+        "content": "理解欧姆定律，能分析简单串联与并联电路。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-14T10:44:59.885Z"
+      }
+    ],
+    "id": 8,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C6"
+    ]
+  },
+  {
+    "title": "自由下落过程中的能量转化",
+    "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。\n请选择正确选项。",
+    "question_type": "single_choice",
+    "grade": "高一",
+    "bloom_level": "remember",
+    "difficulty": "困难",
+    "knowledge_point": "机械能守恒",
+    "options": "{\"A\":\"$10\\\\,\\\\mathrm{m/s}$\",\"B\":\"$5\\\\,\\\\mathrm{m/s}$\",\"C\":\"$50\\\\,\\\\mathrm{m/s}$\",\"D\":\"$100\\\\,\\\\mathrm{m/s}$\"}",
+    "answer": "A",
+    "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/fall.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-14T02:44:59.885Z",
+    "updated_at": "2026-11-14T02:44:59.885Z",
+    "rating": 0,
+    "comment": "",
+    "teacher_status": "pending",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "自由下落过程中的能量转化",
+        "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。\n请选择正确选项。",
+        "options": "{\"A\":\"$10\\\\,\\\\mathrm{m/s}$\",\"B\":\"$5\\\\,\\\\mathrm{m/s}$\",\"C\":\"$50\\\\,\\\\mathrm{m/s}$\",\"D\":\"$100\\\\,\\\\mathrm{m/s}$\"}",
+        "answer": "A",
+        "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/fall.svg",
+        "created_at": "2026-11-14T02:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·机械能及其守恒定律",
+        "fragment_id": "DEMO-3-001",
+        "index_version": "demo-index-v1",
+        "content": "理解机械能守恒定律及其适用条件，能解决简单的能量转化问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [],
+    "id": 9,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C3"
+    ]
+  },
+  {
+    "title": "水平面上物块的加速运动",
+    "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请选择全部正确选项。",
+    "question_type": "multiple_choice",
+    "grade": "高一",
+    "bloom_level": "understand",
+    "difficulty": "基础",
+    "knowledge_point": "牛顿第二定律",
+    "options": "{\"A\":\"$3\\\\,\\\\mathrm{m/s^2}$；$6\\\\,\\\\mathrm{m/s}$\",\"B\":\"$6\\\\,\\\\mathrm{m/s^2}$；$12\\\\,\\\\mathrm{m/s}$\",\"C\":\"$2\\\\,\\\\mathrm{m/s^2}$；$4\\\\,\\\\mathrm{m/s}$\",\"D\":\"解析所依据的物理规律是牛顿第二定律。\"}",
+    "answer": "A、D",
+    "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/newton.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-13T18:44:59.885Z",
+    "updated_at": "2026-11-13T18:44:59.885Z",
+    "rating": 5,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "水平面上物块的加速运动",
+        "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请选择全部正确选项。",
+        "options": "{\"A\":\"$3\\\\,\\\\mathrm{m/s^2}$；$6\\\\,\\\\mathrm{m/s}$\",\"B\":\"$6\\\\,\\\\mathrm{m/s^2}$；$12\\\\,\\\\mathrm{m/s}$\",\"C\":\"$2\\\\,\\\\mathrm{m/s^2}$；$4\\\\,\\\\mathrm{m/s}$\",\"D\":\"解析所依据的物理规律是牛顿第二定律。\"}",
+        "answer": "A、D",
+        "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/newton.svg",
+        "created_at": "2026-11-13T18:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准（2017年版2020年修订）·运动和力",
+        "fragment_id": "DEMO-1-001",
+        "index_version": "demo-index-v1",
+        "content": "运用牛顿运动定律解释生产生活中的有关现象，解决有关问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-13T18:44:59.885Z"
+      }
+    ],
+    "id": 10,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C1",
+      "C2"
+    ]
+  },
+  {
+    "title": "串联电路中的电流与电压",
+    "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请将计算结果填入：________。",
+    "question_type": "fill_blank",
+    "grade": "高二",
+    "bloom_level": "apply",
+    "difficulty": "中等",
+    "knowledge_point": "欧姆定律",
+    "answer": "$I=1\\,\\mathrm{A}$，$U_2=8\\,\\mathrm{V}$。",
+    "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+    "illustration_url": "/illustrations/circuit.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-13T10:44:59.885Z",
+    "updated_at": "2026-11-13T10:44:59.885Z",
+    "rating": 4,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "串联电路中的电流与电压",
+        "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请将计算结果填入：________。",
+        "answer": "$I=1\\,\\mathrm{A}$，$U_2=8\\,\\mathrm{V}$。",
+        "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+        "illustration_url": "/illustrations/circuit.svg",
+        "created_at": "2026-11-13T10:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·电路及其应用",
+        "fragment_id": "DEMO-2-001",
+        "index_version": "demo-index-v1",
+        "content": "理解欧姆定律，能分析简单串联与并联电路。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 1,
+        "teacher_name": "teacher",
+        "confirmed_at": "2026-11-13T10:44:59.885Z"
+      }
+    ],
+    "id": 11,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C6"
+    ]
+  },
+  {
+    "title": "自由下落过程中的能量转化",
+    "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。",
+    "question_type": "short_answer",
+    "grade": "高一",
+    "bloom_level": "analyze",
+    "difficulty": "困难",
+    "knowledge_point": "机械能守恒",
+    "answer": "$v=10\\,\\mathrm{m/s}$。",
+    "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/fall.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-13T02:44:59.885Z",
+    "updated_at": "2026-11-13T02:44:59.885Z",
+    "rating": 0,
+    "comment": "",
+    "teacher_status": "pending",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "自由下落过程中的能量转化",
+        "content": "质量为 $m=1\\,\\mathrm{kg}$ 的小球从离地 $h=5\\,\\mathrm{m}$ 处由静止释放。忽略空气阻力，取 $g=10\\,\\mathrm{m/s^2}$，求小球落地前瞬间的速度大小。",
+        "answer": "$v=10\\,\\mathrm{m/s}$。",
+        "explanation": "以地面为重力势能零点，重力势能转化为动能：$mgh=\\frac{1}{2}mv^2$，所以 $v=\\sqrt{2gh}=10\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/fall.svg",
+        "created_at": "2026-11-13T02:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·机械能及其守恒定律",
+        "fragment_id": "DEMO-3-001",
+        "index_version": "demo-index-v1",
+        "content": "理解机械能守恒定律及其适用条件，能解决简单的能量转化问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [],
+    "id": 12,
+    "user_id": 1,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C3"
+    ]
+  },
+  {
+    "title": "水平面上物块的加速运动",
+    "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请选择正确选项。",
+    "question_type": "single_choice",
+    "grade": "高一",
+    "bloom_level": "remember",
+    "difficulty": "基础",
+    "knowledge_point": "牛顿第二定律",
+    "options": "{\"A\":\"$3\\\\,\\\\mathrm{m/s^2}$；$6\\\\,\\\\mathrm{m/s}$\",\"B\":\"$6\\\\,\\\\mathrm{m/s^2}$；$12\\\\,\\\\mathrm{m/s}$\",\"C\":\"$2\\\\,\\\\mathrm{m/s^2}$；$4\\\\,\\\\mathrm{m/s}$\",\"D\":\"$1.5\\\\,\\\\mathrm{m/s^2}$；$3\\\\,\\\\mathrm{m/s}$\"}",
+    "answer": "A",
+    "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+    "illustration_url": "/illustrations/newton.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-12T18:44:59.885Z",
+    "updated_at": "2026-11-12T18:44:59.885Z",
+    "rating": 5,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "水平面上物块的加速运动",
+        "content": "质量为 $m=2\\,\\mathrm{kg}$ 的物块放在光滑水平面上，受到水平向右的恒力 $F=6\\,\\mathrm{N}$。物块由静止开始运动，求加速度大小及 $2\\,\\mathrm{s}$ 末的速度。\n请选择正确选项。",
+        "options": "{\"A\":\"$3\\\\,\\\\mathrm{m/s^2}$；$6\\\\,\\\\mathrm{m/s}$\",\"B\":\"$6\\\\,\\\\mathrm{m/s^2}$；$12\\\\,\\\\mathrm{m/s}$\",\"C\":\"$2\\\\,\\\\mathrm{m/s^2}$；$4\\\\,\\\\mathrm{m/s}$\",\"D\":\"$1.5\\\\,\\\\mathrm{m/s^2}$；$3\\\\,\\\\mathrm{m/s}$\"}",
+        "answer": "A",
+        "explanation": "物块竖直方向受力平衡，水平方向合力为 $F$。根据牛顿第二定律，$a=F/m=3\\,\\mathrm{m/s^2}$；由 $v=at$ 得 $v=6\\,\\mathrm{m/s}$。",
+        "illustration_url": "/illustrations/newton.svg",
+        "created_at": "2026-11-12T18:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准（2017年版2020年修订）·运动和力",
+        "fragment_id": "DEMO-1-001",
+        "index_version": "demo-index-v1",
+        "content": "运用牛顿运动定律解释生产生活中的有关现象，解决有关问题。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 3,
+        "teacher_name": "physics_li",
+        "confirmed_at": "2026-11-12T18:44:59.885Z"
+      }
+    ],
+    "id": 13,
+    "user_id": 3,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C1",
+      "C2"
+    ]
+  },
+  {
+    "title": "串联电路中的电流与电压",
+    "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请选择全部正确选项。",
+    "question_type": "multiple_choice",
+    "grade": "高二",
+    "bloom_level": "understand",
+    "difficulty": "中等",
+    "knowledge_point": "欧姆定律",
+    "options": "{\"A\":\"$1\\\\,\\\\mathrm{A}$；$8\\\\,\\\\mathrm{V}$\",\"B\":\"$2\\\\,\\\\mathrm{A}$；$16\\\\,\\\\mathrm{V}$\",\"C\":\"$1.5\\\\,\\\\mathrm{A}$；$12\\\\,\\\\mathrm{V}$\",\"D\":\"解析所依据的物理规律是欧姆定律。\"}",
+    "answer": "A、D",
+    "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+    "illustration_url": "/illustrations/circuit.svg",
+    "require_illustration": true,
+    "created_at": "2026-11-12T10:44:59.885Z",
+    "updated_at": "2026-11-12T10:44:59.885Z",
+    "rating": 4,
+    "comment": "",
+    "teacher_status": "confirmed",
+    "version": 1,
+    "versions": [
+      {
+        "version": 1,
+        "title": "串联电路中的电流与电压",
+        "content": "理想电源电压为 $U=12\\,\\mathrm{V}$，电阻 $R_1=4\\,\\Omega$、$R_2=8\\,\\Omega$ 串联接入电路，导线电阻不计。求电路中的电流和 $R_2$ 两端的电压。\n请选择全部正确选项。",
+        "options": "{\"A\":\"$1\\\\,\\\\mathrm{A}$；$8\\\\,\\\\mathrm{V}$\",\"B\":\"$2\\\\,\\\\mathrm{A}$；$16\\\\,\\\\mathrm{V}$\",\"C\":\"$1.5\\\\,\\\\mathrm{A}$；$12\\\\,\\\\mathrm{V}$\",\"D\":\"解析所依据的物理规律是欧姆定律。\"}",
+        "answer": "A、D",
+        "explanation": "串联总电阻 $R=R_1+R_2=12\\,\\Omega$。由欧姆定律 $I=U/R=1\\,\\mathrm{A}$，所以 $U_2=IR_2=8\\,\\mathrm{V}$。",
+        "illustration_url": "/illustrations/circuit.svg",
+        "created_at": "2026-11-12T10:44:59.885Z",
+        "source": "system"
+      }
+    ],
+    "evidence": [
+      {
+        "source": "普通高中物理课程标准·电路及其应用",
+        "fragment_id": "DEMO-2-001",
+        "index_version": "demo-index-v1",
+        "content": "理解欧姆定律，能分析简单串联与并联电路。"
+      }
+    ],
+    "kb_reason": "使用预置来源片段演示引用链路；未执行实际向量检索。",
+    "confirmations": [
+      {
+        "version": 1,
+        "teacher_id": 3,
+        "teacher_name": "physics_li",
+        "confirmed_at": "2026-11-12T10:44:59.885Z"
+      }
+    ],
+    "id": 14,
+    "user_id": 3,
+    "task_id": "DEMO-INITIAL",
+    "thinking_tags": [
+      "C2",
+      "C6"
+    ]
+  }
+]

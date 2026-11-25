@@ -1,0 +1,31 @@
+{
+  "name": "phyqgen-prototype",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.0",
+    "echarts": "^6.0.0",
+    "element-plus": "^2.4.0",
+    "katex": "^0.16.9",
+    "lucide-vue-next": "^0.290.0",
+    "marked": "^11.0.0",
+    "pinia": "^2.1.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.0"
+  },
+  "devDependencies": {
+    "@playwright/cli": "0.1.22",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "prettier": "^3.1.0",
+    "typescript": "5.3.3",
+    "vite": "^5.0.0",
+    "vue-tsc": "^1.8.0"
+  }
+}
