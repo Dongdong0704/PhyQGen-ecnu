@@ -9,6 +9,7 @@ from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from accounts import Teacher
+from agents.content_screening import ContentScreeningError, check_generation_request
 from agents.settings import missing_roles, read_model
 from generation import QUESTION_TIMEOUT_SECONDS, GenerationError, generate_question, knowledge_status
 from questions import insert_question, version_snapshot
@@ -118,7 +119,9 @@ async def run_item(semaphore, task, config, index):
         result = None
         try:
             result = await asyncio.wait_for(
-                generate_question(task["params"], config, update, index),
+                generate_question(
+                    task["params"], config, update, index, user_id=task["user_id"], task_id=task_id,
+                ),
                 timeout=QUESTION_TIMEOUT_SECONDS,
             )
             changes = {"status": "draft", "stage": "草稿已暂存", "progress": 100}
@@ -157,6 +160,10 @@ async def create_task(body: GenerationParams, user: Teacher, request: Request):
     params["knowledge_point"] = params["knowledge_point"].strip()
     if not params["knowledge_point"]:
         raise HTTPException(422, "请输入知识点或命题要求")
+    try:
+        check_generation_request(params)
+    except ContentScreeningError as exc:
+        raise HTTPException(422, str(exc)) from None
     params["thinking_tags"] = list(dict.fromkeys(params["thinking_tags"]))
     task = {
         "id": f"TASK-{uuid.uuid4().hex[:16]}",

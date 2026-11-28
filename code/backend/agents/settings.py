@@ -105,23 +105,37 @@ def model_status(config):
     }
 
 
+def _has_valid_endpoint_components(endpoint):
+    """Allow a port but reject credentials, query data, and fragments."""
+    if endpoint.username or endpoint.password or endpoint.query or endpoint.fragment:
+        return False
+    return not endpoint.netloc.endswith(":") and (endpoint.port is None or endpoint.port > 0)
+
+
+def _is_allowed_endpoint(endpoint, value):
+    """Check the URL syntax and require HTTPS for non-local hosts."""
+    if endpoint.scheme not in {"http", "https"} or not endpoint.hostname:
+        return False
+    if not _has_valid_endpoint_components(endpoint):
+        return False
+    if any(ch.isspace() for ch in value) or any(ch in "\\%" for ch in endpoint.netloc):
+        return False
+    return endpoint.scheme == "https" or endpoint.hostname in {"localhost", "127.0.0.1", "::1"}
+
+
 def checked_endpoint(value, role):
+    """Validate and normalize the base URL for the given agent role."""
     try:
         endpoint = urlsplit(value)
-        if (
-            endpoint.scheme in {"http", "https"} and endpoint.hostname and not endpoint.username
-            and not endpoint.password and not endpoint.query and not endpoint.fragment
-            and not endpoint.netloc.endswith(":") and (endpoint.port is None or endpoint.port > 0)
-            and not any(ch.isspace() for ch in value)
-            and not any(ch in "\\%" for ch in endpoint.netloc)
-        ):
-            if endpoint.scheme == "https" or endpoint.hostname in {"localhost", "127.0.0.1", "::1"}:
-                base_url = value.rstrip("/")
-                wrong_path = "/chat/completions" if role == "illustrator" else "/images/generations"
-                if base_url.endswith(wrong_path):
-                    interface = "图像生成" if role == "illustrator" else "对话补全"
-                    raise HTTPException(422, f"该智能体需要{interface}接口，请填写正确的 API 基础地址或完整接口地址")
-                return base_url
+        if _is_allowed_endpoint(endpoint, value):
+            base_url = value.rstrip("/")
+            wrong_path = "/chat/completions" if role == "illustrator" else "/images/generations"
+            if base_url.endswith(wrong_path):
+                interface = "图像生成" if role == "illustrator" else "对话补全"
+                raise HTTPException(
+                    422, f"该智能体需要{interface}接口，请填写正确的 API 基础地址或完整接口地址"
+                )
+            return base_url
     except ValueError:
         pass
     raise HTTPException(422, "API 地址须为有效的 HTTPS 地址，本机服务可用 HTTP。地址中请勿包含密钥或查询参数")

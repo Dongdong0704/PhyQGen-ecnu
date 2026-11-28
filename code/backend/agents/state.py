@@ -1,4 +1,4 @@
-"""Per-question graph state and runtime dependencies."""
+"""Per-question working memory and runtime dependencies."""
 
 from collections.abc import Callable
 from dataclasses import dataclass

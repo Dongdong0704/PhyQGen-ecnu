@@ -55,32 +55,52 @@ def knowledge_status():
     }
 
 
-def retrieve_evidence(knowledge_point, grade, limit=4):
-    entries, frequencies = _load_index()
-    groups = _groups(knowledge_point)
-    phrases = {group for group in groups if not group.isascii() and 2 <= len(group) <= 30} - STOP_TERMS
-    query_terms = _terms(knowledge_point)
-    weights = {
-        term: math.log((len(entries) + 1) / (frequencies[term] + 1))
-        for term in query_terms if frequencies[term]
-    }
+def _matches_grade(source, curriculum, high_school, middle_school):
+    """Check whether a fragment is applicable to the requested school stage."""
+    if high_school and curriculum and "义务教育" in source:
+        return False
+    return not (middle_school and (not curriculum or "普通高中" in source))
+
+
+def _score_fragment(terms, text, weights, phrases):
+    """Score a fragment that contains a usable query match."""
+    matches = terms & weights.keys()
+    phrase_length = max((len(phrase) for phrase in phrases if phrase in text), default=0)
+    if phrase_length == 0 and not any(len(term) >= 3 for term in matches):
+        return None
+    return math.fsum(weights[term] for term in matches) + 3 * phrase_length
+
+
+def _rank_evidence(entries, weights, phrases, grade):
+    """Score and rank fragments eligible for this grade."""
     high_school = grade.startswith(("高", "普通高中"))
     middle_school = grade.startswith(("初", "七", "八", "九"))
     candidates = []
     for fragment, terms, text in entries:
         source = fragment["source_file"]
         curriculum = fragment.get("doc_type") == "课标"
-        if high_school and curriculum and "义务教育" in source:
+        if not _matches_grade(source, curriculum, high_school, middle_school):
             continue
-        if middle_school and (not curriculum or "普通高中" in source):
-            continue
-        matches = terms & weights.keys()
-        phrase_length = max((len(phrase) for phrase in phrases if phrase in text), default=0)
-        if phrase_length == 0 and not any(len(term) >= 3 for term in matches):
-            continue
-        score = math.fsum(weights[term] for term in matches) + 3 * phrase_length
-        candidates.append((score * (1.1 if curriculum else 1), fragment))
+        score = _score_fragment(terms, text, weights, phrases)
+        if score is not None:
+            candidates.append((score * (1.1 if curriculum else 1), fragment))
     candidates.sort(key=lambda item: item[0], reverse=True)
+    return candidates
+
+
+def retrieve_evidence(knowledge_point, grade, limit=4):
+    """Return the highest-ranked evidence fragments for a knowledge point."""
+    entries, frequencies = _load_index()
+    groups = _groups(knowledge_point)
+    phrases = {
+        group for group in groups if not group.isascii() and 2 <= len(group) <= 30
+    } - STOP_TERMS
+    query_terms = _terms(knowledge_point)
+    weights = {
+        term: math.log((len(entries) + 1) / (frequencies[term] + 1))
+        for term in query_terms if frequencies[term]
+    }
+    candidates = _rank_evidence(entries, weights, phrases, grade)
     if not candidates:
         return []
     threshold = candidates[0][0] * 0.45

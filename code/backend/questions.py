@@ -128,10 +128,10 @@ def questions(user: Teacher):
 def export_questions(selection: ExportSelection, user: Teacher):
     with db() as conn:
         conn.execute("BEGIN")
-        questions = [own_question(conn, user["id"], question_id) for question_id in dict.fromkeys(selection.ids)]
-    if not all(map(is_confirmed, questions)):
+        selected_questions = [own_question(conn, user["id"], question_id) for question_id in dict.fromkeys(selection.ids)]
+    if not all(map(is_confirmed, selected_questions)):
         raise HTTPException(409, "只能导出当前版本已由教师确认的题目")
-    return questions
+    return selected_questions
 
 
 @router.get("/questions/{question_id}")
@@ -156,6 +156,26 @@ def edit_question(question_id: int, patch: DraftPatch, user: Teacher):
     return question
 
 
+def _validate_question_for_confirmation(question):
+    """Check required fields, choice options, and the illustration before confirmation."""
+    for field, label in (
+        ("title", "标题"), ("content", "题干"), ("answer", "答案"), ("explanation", "解析"),
+    ):
+        if not question[field].strip():
+            raise HTTPException(422, f"请先补全{label}")
+    if question["question_type"] in CHOICE_TYPES:
+        choices = parse_options(question["options"])
+        if (
+            not choices
+            or len(choices) < 2
+            or any(not option.strip() for option in choices.values())
+        ):
+            raise HTTPException(422, "请补全选择题选项")
+    if question["require_illustration"] and not question["illustration_url"]:
+        raise HTTPException(422, "此题要求配图，请先补充可预览的图片")
+    validate_illustration(question["illustration_url"])
+
+
 @router.post("/questions/{question_id}/confirm")
 def confirm_question(question_id: int, revision: Revision, user: Teacher):
     with db(write=True) as conn:
@@ -163,16 +183,7 @@ def confirm_question(question_id: int, revision: Revision, user: Teacher):
         check_version(question, revision.version)
         if is_confirmed(question):
             return question
-        for field, label in (("title", "标题"), ("content", "题干"), ("answer", "答案"), ("explanation", "解析")):
-            if not question[field].strip():
-                raise HTTPException(422, f"请先补全{label}")
-        if question["question_type"] in CHOICE_TYPES:
-            choices = parse_options(question["options"])
-            if not choices or len(choices) < 2 or any(not option.strip() for option in choices.values()):
-                raise HTTPException(422, "请补全选择题选项")
-        if question["require_illustration"] and not question["illustration_url"]:
-            raise HTTPException(422, "此题要求配图，请先补充可预览的图片")
-        validate_illustration(question["illustration_url"])
+        _validate_question_for_confirmation(question)
         confirmed_at = now()
         question["confirmations"].append({
             "version": question["version"],
@@ -206,17 +217,17 @@ def delete_question(question_id: int, user: Teacher):
 def overview_stats(user: Teacher):
     with db() as conn:
         conn.execute("BEGIN")
-        questions = list_questions(conn, user["id"])
+        own_questions = list_questions(conn, user["id"])
         task_count = conn.execute("SELECT COUNT(*) FROM tasks WHERE user_id=?", (user["id"],)).fetchone()[0]
-    confirmed_count = sum(map(is_confirmed, questions))
+    confirmed_count = sum(map(is_confirmed, own_questions))
     return {
-        "total_questions": len(questions),
-        "pending_questions": len(questions) - confirmed_count,
+        "total_questions": len(own_questions),
+        "pending_questions": len(own_questions) - confirmed_count,
         "confirmed_questions": confirmed_count,
         "total_tasks": task_count,
-        "recent_questions": questions[:5],
+        "recent_questions": own_questions[:5],
         **{
-            f"questions_by_{field}": dict(Counter(str(q[source] or "未评分") for q in questions))
+            f"questions_by_{field}": dict(Counter(str(q[source] or "未评分") for q in own_questions))
             for field, source in (
                 ("type", "question_type"), ("bloom", "bloom_level"), ("grade", "grade"),
                 ("knowledge", "knowledge_point"), ("rating", "rating"),

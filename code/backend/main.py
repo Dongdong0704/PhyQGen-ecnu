@@ -39,16 +39,16 @@ def bootstrap_accounts():
 
 
 @asynccontextmanager
-async def lifespan(app):
+async def lifespan(application):
     initialize()
     bootstrap_accounts()
     tasks.finish_interrupted_tasks()
-    app.state.workers = set()
-    app.state.generation_slots = asyncio.Semaphore(2)
+    application.state.workers = set()
+    application.state.generation_slots = asyncio.Semaphore(2)
     try:
         yield
     finally:
-        workers = list(app.state.workers)
+        workers = list(application.state.workers)
         for worker in workers:
             worker.cancel()
         await asyncio.gather(*workers, return_exceptions=True)

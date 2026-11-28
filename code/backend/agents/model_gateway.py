@@ -56,11 +56,8 @@ def _origin(url):
     return url.scheme, url.host, url.port or (443 if url.scheme == "https" else 80)
 
 
-async def _connect_addresses(url, allow_local):
-    if _is_local(url) and allow_local:
-        return ["127.0.0.1" if url.host == "localhost" else url.host]
-    if url.scheme != "https":
-        raise GenerationError("远程模型及配图地址需使用 HTTPS。")
+async def _resolve_addresses(url):
+    """Resolve a URL to distinct socket addresses, with IPv4 first."""
     try:
         records = await asyncio.wait_for(
             asyncio.get_running_loop().getaddrinfo(
@@ -72,7 +69,16 @@ async def _connect_addresses(url, allow_local):
         raise GenerationError(f"域名解析超过 {DNS_TIMEOUT} 秒，请检查 API 地址和本机 DNS。") from None
     except (OSError, UnicodeError, ValueError):
         raise GenerationError("服务地址无法解析，请检查 API 地址或网络。") from None
-    addresses = sorted({record[4][0] for record in records}, key=lambda addr: (":" in addr, addr))
+    return sorted({record[4][0] for record in records}, key=lambda addr: (":" in addr, addr))
+
+
+async def _connect_addresses(url, allow_local):
+    """Return connection targets after applying the local and remote address rules."""
+    if _is_local(url) and allow_local:
+        return ["127.0.0.1" if url.host == "localhost" else url.host]
+    if url.scheme != "https":
+        raise GenerationError("远程模型及配图地址需使用 HTTPS。")
+    addresses = await _resolve_addresses(url)
     if not addresses:
         raise GenerationError("服务地址无法解析，请检查 API 地址或网络。")
     for address in addresses:

@@ -144,7 +144,7 @@
           <div class="option-card">
             <div>
               <strong>知识库增强</strong>
-              <p>{{ knowledgeHint }}</p>
+              <p>{{ knowledgeHint }}。开启后，命题模型也会参考你近期生成和已确认的同类题节选。</p>
             </div>
             <el-switch v-model="form.use_kb" aria-label="启用知识库增强" />
           </div>
@@ -432,7 +432,7 @@ async function loadKnowledgeStatus() {
     knowledgeHint.value =
       knowledge.kb_enabled && knowledge.kb_fragments > 0
         ? `本地资料索引 · ${knowledge.kb_version}`
-        : '知识库当前不可用，将按普通流程生成'
+        : '本地资料索引当前不可用'
   } catch {
     // 具体检索状态将在逐题结果中显示。
   }

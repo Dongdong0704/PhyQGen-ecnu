@@ -149,7 +149,7 @@ def excellent_detail(question_id: int, _user: User):
     confirmation = next(
         record for record in question["confirmations"] if record["version"] == question["version"]
     )
-    fields = ExcellentQuestionDetail.model_fields
+    fields = set(ExcellentQuestionDetail.model_fields.keys())
     return {
         **{key: value for key, value in question.items() if key in fields},
         "confirmations": [confirmation],

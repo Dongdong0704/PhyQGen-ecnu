@@ -9,6 +9,7 @@ from langsmith import tracing_context
 from knowledge import retrieve_evidence
 
 from .illustrator import generate_illustration
+from .memory import load_prompt_memory, start_working_memory
 from .model_gateway import model_client
 from .planner import build_requirements, plan_question
 from .state import GenerationContext, GenerationState
@@ -41,7 +42,10 @@ question_graph = (
 )
 
 
-async def generate_question(params: dict, settings: dict, update: Callable[[str, int, int], None], index: int) -> dict:
+async def generate_question(
+    params: dict, settings: dict, update: Callable[[str, int, int], None], index: int,
+    *, user_id: int | None = None, task_id: str = "",
+) -> dict:
     evidence = []
     if params.get("use_kb"):
         update("知识检索", 12, 1)
@@ -53,18 +57,10 @@ async def generate_question(params: dict, settings: dict, update: Callable[[str,
     else:
         kb_reason = "本次已关闭知识库增强。"
 
-    requirements = build_requirements(params, index)
-    initial_state: GenerationState = {
-        "params": params,
-        "requirements": requirements,
-        "planner_payload": {
-            "命题要求": requirements,
-            "资料片段": evidence,
-            "批量命题提示": "根据本题序号选择不同情境、数值或设问角度。",
-        },
-        "text_attempt": 0,
-        "image_round": 0,
-    }
+    memory = None
+    if user_id is not None:
+        memory = await asyncio.to_thread(load_prompt_memory, user_id, task_id, params)
+    initial_state = start_working_memory(params, build_requirements(params, index), evidence, memory)
     async with model_client() as client:
         with tracing_context(enabled=False):
             result = await question_graph.ainvoke(
